@@ -1,0 +1,355 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int pil,pilihan;
+    float CFe,CFx;
+    float CFsesaknapas=0.9,
+        CFnyeridada=0.9,
+        CFdenyutcepat=0.9,
+        CFkeringatlebih=0.8,
+        CFkelelahan=0.6,
+        CFmual=0.4,
+        CFpusing=0.4;
+    int q1,q2,q3,q4,q5,q6,q7;
+    float CF1,CF2,CF3,CF4,CF5,CF6,CF7,
+        CFkombinasi,CFkombinasi2,CFkombinasi3,CFkombinasi4,CFkombinasi5,CFkombinasi6;
+
+    awal:
+    printf("Diagnosa Penyakit Jantung Koroner\n\n");
+    printf("pilihan jawaban : \n");
+    printf("1. tidak\n");
+    printf("2. tidak tahu\n");
+    printf("3. sedikit yakin\n");
+    printf("4. cukup yakin\n");
+    printf("5. yakin\n");
+    printf("6. sangat yakin\n\n");
+    printf("Apakah anda mengalami sesak napas? "); scanf("%d",&q1);
+    printf("Apakah anda mengalami nyeri dada? "); scanf("%d",&q2);
+    printf("Apakah anda mengalami denyut jantung cepat? "); scanf("%d",&q3);
+    printf("Apakah anda mengalami keringat berlebih? "); scanf("%d",&q4);
+    printf("Apakah anda mengalami kelelahan? "); scanf("%d",&q5);
+    printf("Apakah anda mengalami mual? "); scanf("%d",&q6);
+    printf("Apakah anda mengalami pusing? "); scanf("%d",&q7);
+    printf("\n");
+
+    if(q1>6||q2>6||q3>6||q4>6||q5>6||q6>6||q6>6){
+        printf("masukkan angka sesuai pada menu pilihan, apakah ingin mengulangi? 1(ya)/0(tidak) "); scanf("%d",&pilihan);
+        if(pilihan==1){
+            goto awal;
+        }
+        else{
+        exit(0);}
+    }
+    else{}
+    //CF[H,E]1
+    if(q1==1){
+        CFe=-1;
+    }
+    else if(q1==2){
+        CFe=0.1;
+    }
+    else if(q1==3){
+        CFe=0.3;
+    }
+    else if(q1==4){
+        CFe=0.6;
+    }
+    else if(q1==5){
+        CFe=0.8;
+    }
+    else if(q1==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF1=CFsesaknapas*CFe;
+
+    //CF[H,E]2
+    if(q2==1){
+        CFe=-1;
+    }
+    else if(q2==2){
+        CFe=0.1;
+    }
+    else if(q2==3){
+        CFe=0.3;
+    }
+    else if(q2==4){
+        CFe=0.6;
+    }
+    else if(q2==5){
+        CFe=0.8;
+    }
+    else if(q2==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF2=CFnyeridada*CFe;
+
+     //CF[H,E]3
+    if(q3==1){
+        CFe=-1;
+    }
+    else if(q3==2){
+        CFe=0.1;
+    }
+    else if(q3==3){
+        CFe=0.3;
+    }
+    else if(q3==4){
+        CFe=0.6;
+    }
+    else if(q3==5){
+        CFe=0.8;
+    }
+    else if(q3==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF3=CFdenyutcepat*CFe;
+
+     //CF[H,E]4
+    if(q4==1){
+        CFe=-1;
+    }
+    else if(q4==2){
+        CFe=0.1;
+    }
+    else if(q4==3){
+        CFe=0.3;
+    }
+    else if(q4==4){
+        CFe=0.6;
+    }
+    else if(q4==5){
+        CFe=0.8;
+    }
+    else if(q4==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF4=CFkeringatlebih*CFe;
+
+     //CF[H,E]5
+    if(q5==1){
+        CFe=-1;
+    }
+    else if(q5==2){
+        CFe=0.1;
+    }
+    else if(q5==3){
+        CFe=0.3;
+    }
+    else if(q5==4){
+        CFe=0.6;
+    }
+    else if(q5==5){
+        CFe=0.8;
+    }
+    else if(q5==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF5=CFkelelahan*CFe;
+
+     //CF[H,E]6
+    if(q6==1){
+        CFe=-1;
+    }
+    else if(q6==2){
+        CFe=0.1;
+    }
+    else if(q6==3){
+        CFe=0.3;
+    }
+    else if(q6==4){
+        CFe=0.6;
+    }
+    else if(q6==5){
+        CFe=0.8;
+    }
+    else if(q6==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF6=CFmual*CFe;
+
+     //CF[H,E]7
+    if(q7==1){
+        CFe=-1;
+    }
+    else if(q7==2){
+        CFe=0.1;
+    }
+    else if(q7==3){
+        CFe=0.3;
+    }
+    else if(q7==4){
+        CFe=0.6;
+    }
+    else if(q7==5){
+        CFe=0.8;
+    }
+    else if(q7==6){
+        CFe=1;
+    }
+    else {
+        printf("error\n");
+    }
+    CF7=CFpusing*CFe;
+
+    //kombinasi hipotesa
+    //kombinasi1
+    if (CF1>=0 && CF2>=0){
+    CFkombinasi= CF1+CF2*(1-CF1);
+    }
+    else if (CF1<0 || CF2<0){
+            if (CF1>CF2){
+                CFx=CF2;
+            }
+            else {
+                CFx=CF1;
+            }
+    CFkombinasi= CF1+CF2*(1-CFx);
+    }
+    else if(CF1<0 && CF2<0){
+    CFkombinasi= CF1+CF2*(1+CF1);
+    }
+    else{}
+
+    //kombinasi 2
+    if (CFkombinasi>=0 && CF3>=0){
+    CFkombinasi2= CFkombinasi+CF3*(1-CFkombinasi);
+    }
+    else if (CFkombinasi<0 || CF3<0){
+            if (CFkombinasi>CF3){
+                CFx=CF3;
+            }
+            else {
+                CFx=CFkombinasi;
+            }
+    CFkombinasi2= CFkombinasi+CF3*(1-CFx);
+    }
+    else if(CFkombinasi<0 && CF3<0){
+    CFkombinasi2= CFkombinasi+CF3*(1+CFkombinasi);
+    }
+    else{}
+
+    //kombinasi 3
+    if (CFkombinasi2>=0 && CF4>=0){
+    CFkombinasi3= CFkombinasi2+CF4*(1-CFkombinasi2);
+    }
+    else if (CFkombinasi2<0 || CF4<0){
+            if (CFkombinasi2>CF4){
+                CFx=CF4;
+            }
+            else {
+                CFx=CFkombinasi2;
+            }
+    CFkombinasi3= CFkombinasi2+CF4*(1-CFx);
+    }
+    else if(CFkombinasi2<0 && CF4<0){
+    CFkombinasi3= CFkombinasi2+CF4*(1+CFkombinasi2);
+    }
+    else{}
+
+    //kombinasi 4
+    if (CFkombinasi3>=0 && CF5>=0){
+    CFkombinasi4= CFkombinasi3+CF5*(1-CFkombinasi3);
+    }
+    else if (CFkombinasi3<0 || CF5<0){
+            if (CFkombinasi3>CF5){
+                CFx=CF5;
+            }
+            else {
+                CFx=CFkombinasi3;
+            }
+    CFkombinasi4= CFkombinasi3+CF5*(1-CFx);
+    }
+    else if(CFkombinasi3<0 && CF5<0){
+    CFkombinasi4= CFkombinasi3+CF5*(1+CFkombinasi3);
+    }
+    else{}
+
+    //kombinasi 5
+    if (CFkombinasi4>=0 && CF6>=0){
+    CFkombinasi5= CFkombinasi4+CF6*(1-CFkombinasi4);
+    }
+    else if (CFkombinasi4<0 || CF6<0){
+            if (CFkombinasi4>CF6){
+                CFx=CF6;
+            }
+            else {
+                CFx=CFkombinasi4;
+            }
+    CFkombinasi5= CFkombinasi4+CF6*(1-CFx);
+    }
+    else if(CFkombinasi4<0 && CF6<0){
+    CFkombinasi5= CFkombinasi4+CF6*(1+CFkombinasi4);
+    }
+    else{}
+
+    //kombinasi 6
+    if (CFkombinasi5>=0 && CF7>=0){
+    CFkombinasi6= CFkombinasi5+CF7*(1-CFkombinasi5);
+    }
+    else if (CFkombinasi5<0 || CF7<0){
+            if (CFkombinasi5>CF7){
+                CFx=CF7;
+            }
+            else {
+                CFx=CFkombinasi5;
+            }
+    CFkombinasi6= CFkombinasi5+CF7*(1-CFx);
+    }
+    else if(CFkombinasi5<0 && CF7<0){
+    CFkombinasi6= CFkombinasi5+CF7*(1+CFkombinasi5);
+    }
+    else{}
+
+    /*
+    printf("CF1: %0.2f\n",CF1);
+    printf("CF2: %0.2f\n",CF2);
+    printf("CF3: %0.2f\n",CF3);
+    printf("CF4: %0.2f\n",CF4);
+    printf("CF5: %0.2f\n",CF5);
+    printf("CF6: %0.2f\n",CF6);
+    printf("CF7: %0.2f\n",CF7);
+
+    printf("Kom1: %0.2f\n",CFkombinasi);
+    printf("Kom2: %0.2f\n",CFkombinasi2);
+    printf("Kom3: %0.2f\n",CFkombinasi3);
+    printf("Kom4: %0.2f\n",CFkombinasi4);
+    printf("Kom5: %0.2f\n",CFkombinasi5);
+    printf("Kom6: %0.2f\n",CFkombinasi6);*/
+    printf("\n");
+    if(CFkombinasi6<0){
+        CFkombinasi6=0;
+    }
+    else{}
+    printf("Prosentase anda terkena penyakit jantung koroner adalah sebesar : ");
+    printf("%0.2f persen",CFkombinasi6*100);
+
+    printf("\n\napakah anda ingin mendiagnosa lagi? 1(ya)/0(tidak)"); scanf("%d",&pil);
+    if(pil==1){
+        goto awal;
+    }
+    else{
+
+    }
+
+    return 0;
+}
